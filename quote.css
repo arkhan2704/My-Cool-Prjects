@@ -1,0 +1,68 @@
+body {
+     margin: 0;
+     padding: 40px;
+     font-family: 'Poppins', sans-serif;
+    background-image: url(/4138062.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+      
+      
+    
+ }
+ .container {
+     
+     background-image: url(/view-comical-scene-with-old-person.jpg);
+     background-size: cover;
+     padding: 30px;
+     border-radius: 20px;
+     max-width: 900px;
+     min-height:500px;
+     margin: auto;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+     transform: scale(0.8);
+     animation: fadeInScale 1s ease forwards;
+     text-align: center;
+     position: relative;
+     
+ }.container p{
+  font-size: 40px;
+  line-height: 50px;
+  color: white;
+    transition: all 0.5s ease;
+    margin-top: 69px;
+ 
+ }
+ .author {
+  font-weight: 500;
+  font-style: italic;
+}
+
+ .container h1{
+  font-size: 60px;
+  color: white;
+ }
+ .container button{
+   position: fixed;
+  left: 50%;
+  bottom: 40px; /* Distance from bottom */
+  transform: translateX(-50%);
+ 
+  padding: 15px;
+  font-size: 32px;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: 0px;
+  border: none;
+  background: white;
+  color: black;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: 0.5s ease;
+  /* margin-top: 80px; */
+   
+ }.container button:hover{
+      transform: translateX(-50%) scale(1.1);
+
+   transition: 0.5s ease;
+   background-color: black;
+   color: white;
+ }

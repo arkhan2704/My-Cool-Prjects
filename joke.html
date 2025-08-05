@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="joke.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Joke</h1>
+        <p id="joke"></p>
+        <button id="btn">Tell me a joke</button>
+    </div>
+
+    <script >
+        let para = document.getElementById("joke")
+        let btn = document.getElementById("btn")
+        const emoji = '\u{1F602}';
+        
+
+       const getJoke = async () => {
+    try {
+        let response = await fetch("https://icanhazdadjoke.com/", {
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Something went wrong: ${response.status}`);
+        }
+
+        let jsonJoke = await response.json();
+        para.textContent = jsonJoke.joke + emoji + emoji + emoji;
+
+      btn.textContent = "Next Joke"
+        console.log(jsonJoke.joke);
+        return jsonJoke;
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+  btn.addEventListener('click', e  => {
+            getJoke();
+        });
+
+</script>
+</body>
+</html>

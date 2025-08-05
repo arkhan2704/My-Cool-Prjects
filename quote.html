@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="quote.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Daily Quotes </h1>
+        <p id="quote"></p>
+        <button id="btn">Tell me quote of the day</button>
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+        let para = document.getElementById("quote");
+        const emoji = "\u{1F4AC}";
+
+        const quotes = [
+            { content: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+            { content: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+            { content: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+            { content: "Do not wait to strike till the iron is hot; but make it hot by striking.", author: "William Butler Yeats" },
+            { content: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { content: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+            { content: "Everything you’ve ever wanted is on the other side of fear.", author: "George Addair" },
+            { content: "You miss 100% of the shots you don’t take.", author: "Wayne Gretzky" },
+            { content: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
+            { content: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+            { content: "Happiness is not something ready made. It comes from your own actions.", author: "Dalai Lama" },
+            { content: "If you’re going through hell, keep going.", author: "Winston Churchill" },
+            { content: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+            { content: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+            { content: "What you get by achieving your goals is not as important as what you become by achieving your goals.", author: "Zig Ziglar" }
+        ];
+
+
+
+        const getQuote = async () => {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            para.textContent = `"${randomQuote.content}" - ${randomQuote.author} ${emoji}`
+            btn.textContent = "Next Quote"
+
+            para.style.backgroundColor = "rgba(0, 0, 0, 0.377)";
+            para.style.borderRadius = "60px";
+            para.style.textAlign = "center";
+            para.style.padding = "10px";
+           para.style.transition = "opacity 0.5s ease";
+           para.innerHTML = `"${randomQuote.content}" - <span class="author">${randomQuote.author}</span> ${emoji}`;
+
+
+
+        }
+
+        btn.addEventListener('click', () => {
+            getQuote();
+        });
+
+
+    </script>
+</body>
+
+</html>
